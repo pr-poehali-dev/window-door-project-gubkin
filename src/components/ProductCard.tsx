@@ -5,7 +5,6 @@ import { HoverCard, HoverCardContent, HoverCardTrigger } from '@/components/ui/h
 
 interface ProductCardProps {
   name: string;
-  price: string;
   image: string;
   description?: string;
   isNew?: boolean;
@@ -14,7 +13,6 @@ interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({
   name,
-  price,
   image,
   description,
   isNew,
@@ -27,7 +25,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           <div className="relative">
             {isNew && (
               <div className="absolute top-2 left-2 bg-yellow-400 text-xs font-bold uppercase text-gray-900 rounded-full px-2 py-1 z-10">
-                New
+                Новинка
               </div>
             )}
             {discount && (
@@ -46,7 +44,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           
           <CardContent className="pt-4">
             <h3 className="text-lg font-semibold text-gray-900 mb-1">{name}</h3>
-            <p className="text-xl font-bold text-door-DEFAULT">{price} ₽</p>
+            <p className="text-sm text-gray-500">Узнать цену у консультанта</p>
           </CardContent>
           
           <CardFooter className="flex justify-between">
@@ -61,7 +59,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <div className="flex flex-col space-y-2">
           <h4 className="text-lg font-semibold">{name}</h4>
           <p className="text-sm text-gray-500">{description || "Высококачественная дверь, которая прослужит долгие годы. Доступна в различных цветовых решениях под ваш интерьер."}</p>
-          <p className="font-bold">{price} ₽</p>
+          <p className="text-sm font-medium">Для уточнения стоимости свяжитесь с нами по телефону 8-904-087-23-77</p>
         </div>
       </HoverCardContent>
     </HoverCard>
